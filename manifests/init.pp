@@ -18,6 +18,7 @@ class dotfiles (
     environment => "HOME=${homedir}",
     cwd         => $homedir,
     refreshonly => true,
+    logoutput   => true,
   }
 
 }
