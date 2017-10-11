@@ -7,7 +7,7 @@ class dotfiles (
     provider => git,
     user     => $user,
     source   => {
-      'origin' => 'git://git@github.com/demophoon/dotfiles.git',
+      'origin' => 'git@github.com:demophoon/dotfiles.git',
     },
     notify   => Exec['Install Dotfiles'],
   }
