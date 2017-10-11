@@ -1,4 +1,4 @@
-class dotfiles::init (
+class dotfiles (
   String $user = 'britt',
   String $homedir = "/home/${user}",
 ){
