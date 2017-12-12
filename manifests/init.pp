@@ -3,7 +3,7 @@ class dotfiles (
   String $homedir = "/home/${user}",
 ){
   vcsrepo { "${homedir}/.dotfiles":
-    ensure   => present,
+    ensure   => latest,
     provider => git,
     user     => $user,
     source   => 'https://github.com/demophoon/dotfiles.git',
