@@ -3,11 +3,14 @@ class dotfiles (
   String $homedir = "/home/${user}",
 ){
   vcsrepo { "${homedir}/.dotfiles":
-    ensure   => latest,
-    provider => git,
-    user     => $user,
-    source   => 'https://github.com/demophoon/dotfiles.git',
-    notify   => Exec['Install Dotfiles'],
+    ensure        => latest,
+    provider      => git,
+    user          => $user,
+    source        => {
+      'master'    => 'https://github.com/demophoon/dotfiles.git',
+      'demophoon' => 'git@github.com:demophoon/dotfiles.git',
+    },
+    notify => Exec['Install Dotfiles'],
   }
 
   exec { 'Install Dotfiles':
