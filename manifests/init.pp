@@ -11,7 +11,8 @@ class dotfiles (
       'demophoon-https' => 'https://github.com/demophoon/dotfiles.git',
       'demophoon'       => 'git@github.com:demophoon/dotfiles.git',
     },
-    notify => Exec['Install Dotfiles'],
+    submodules          => true,
+    notify              => Exec['Install Dotfiles'],
   }
 
   exec { 'Install Dotfiles':
